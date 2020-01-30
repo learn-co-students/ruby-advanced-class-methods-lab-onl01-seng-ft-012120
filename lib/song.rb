@@ -30,9 +30,11 @@ class Song
     song.save                 
     song
   end
+      
+  
 
   def self.find_by_name(name)
-    self.all.find {|song| song.name == name}
+    self.all.find {|song| song.name.downcase == name.downcase}
   end
   
   def self.find_or_create_by_name(name) 
@@ -42,7 +44,7 @@ class Song
   def self.alphabetical
     self.all.sort_by {|song| song.name}
   end
-  
+
   
   def self.new_from_filename(filename)
     new_file = filename.split(" - ")
