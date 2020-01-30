@@ -19,7 +19,7 @@ class Song
                              #initialised and saved.  
   
   def self.new_by_name(name)  #name setter method is evoked on song variable and takes the value in
-    song = self.new           #name argument. song variable now also conatians the name argument.
+    song = self.create           #name argument. song variable now also conatians the name argument
     song.name = name          #finally the instance is called.
     song
   end
